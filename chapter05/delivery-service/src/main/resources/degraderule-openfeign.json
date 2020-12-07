@@ -1,0 +1,8 @@
+[
+  {
+    "resource": "GET:http://sms-service/send",
+    "count": 20,
+    "grade": 0,
+    "timeWindow": 30
+  }
+]

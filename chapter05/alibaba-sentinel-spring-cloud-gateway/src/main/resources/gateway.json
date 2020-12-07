@@ -1,0 +1,10 @@
+[
+  {
+    "resource": "httpbin_route",
+    "count": 0,
+    "paramItem": {
+      "parseStrategy": 2,
+      "fieldName": "LANG"
+    }
+  }
+]

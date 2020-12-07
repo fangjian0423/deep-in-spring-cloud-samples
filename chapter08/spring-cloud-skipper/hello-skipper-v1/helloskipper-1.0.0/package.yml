@@ -1,0 +1,5 @@
+apiVersion: deep.in.spring.cloud/v1
+kind: SkipperPackageMetadata
+name: helloskipper
+version: 1.0.0
+description: Hello Skipper v1

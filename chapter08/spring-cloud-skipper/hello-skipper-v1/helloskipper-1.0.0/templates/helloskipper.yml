@@ -1,0 +1,16 @@
+apiVersion: deep.in.spring.cloud/v1
+kind: SpringCloudDeployerApplication
+metadata:
+  name: helloskipper
+  type: demo
+spec:
+  resource: maven://deep.in.spring.cloud:hello-skipper
+  version: {{version}}
+  applicationProperties:
+    {{#spec.applicationProperties.entrySet}}
+    {{key}}: {{value}}
+    {{/spec.applicationProperties.entrySet}}
+  deploymentProperties:
+    {{#spec.deploymentProperties.entrySet}}
+    {{key}}: {{value}}
+    {{/spec.deploymentProperties.entrySet}}

@@ -1,0 +1,1 @@
+使用 FunctionalSpringApplication 运行一个 FaaS 程序。

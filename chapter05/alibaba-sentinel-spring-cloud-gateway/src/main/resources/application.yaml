@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: sentinel-spring-cloud-gateway
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+      # Add your routes here.
+      - id: httpbin_route
+        uri: https://httpbin.org
+        predicates:
+        - Path=/httpbin/**
+        filters:
+        - RewritePath=/httpbin/(?<segment>.*), /$\{segment}
+
+    sentinel:
+      datasource.ds.file:
+        file: "classpath: gateway.json"
+        ruleType: gw-flow
+      transport:
+        dashboard: localhost:8080
+      scg.fallback:
+          mode: response
+          response-status: 429

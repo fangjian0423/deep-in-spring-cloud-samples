@@ -1,0 +1,11 @@
+dubbo:
+  cloud:
+    subscribed-services: sc-dubbo-provider
+  protocols:
+    dubbo:
+      port: -1
+  consumer:
+    check: false
+
+server:
+  port: 0

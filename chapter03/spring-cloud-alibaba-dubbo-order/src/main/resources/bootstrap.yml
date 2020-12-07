@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: sc-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: localhost:8848
+

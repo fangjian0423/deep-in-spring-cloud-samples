@@ -1,0 +1,14 @@
+[
+  {
+    "resource": "GET:http://inventory-provider/save",
+    "count": 5,
+    "grade": 2,
+    "timeWindow": 10
+  },
+  {
+    "resource": "GET:https://httpbin.org/delay/3/",
+    "count": 20,
+    "grade": 0,
+    "timeWindow": 30
+  }
+]

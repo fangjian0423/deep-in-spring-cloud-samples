@@ -1,0 +1,22 @@
+[
+  {
+    "resource": "my-provider1",
+    "count": 0
+  },
+  {
+    "resource": "my-provider2",
+    "count": 0,
+    "paramItem": {
+      "parseStrategy": 2,
+      "fieldName": "LANG"
+    }
+  },
+  {
+    "resource": "my-provider3",
+    "count": 0,
+    "paramItem": {
+      "parseStrategy": 3,
+      "fieldName": "name"
+    }
+  }
+]

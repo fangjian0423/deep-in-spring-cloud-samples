@@ -1,0 +1,5 @@
+spec:
+  applicationProperties:
+    server.port: 9090
+  deploymentProperties:
+    spring.cloud.deployer.memory: 2048m

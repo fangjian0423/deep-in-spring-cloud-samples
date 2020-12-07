@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="alibaba-sentinel" />
+        <module name="alibaba-sentinel-spring-cloud-gateway" />
+        <module name="alibaba-sentinel-zuul" />
+        <module name="bus-common" />
+        <module name="creditcard-fraud-detection-sink" />
+        <module name="creditcard-source" />
+        <module name="delivery-service" />
+        <module name="hello-skipper (1)" />
+        <module name="hello-skipper (2)" />
+        <module name="hello-skipper (3)" />
+        <module name="java-function" />
+        <module name="my-circuit-breaker" />
+        <module name="nacos-provider" />
+        <module name="netflix-hystrix" />
+        <module name="netflix-hystrix-dashboard" />
+        <module name="netflix-hystrix-spring-cloud-gateway" />
+        <module name="netflix-hystrix-zuul" />
+        <module name="order-service" />
+        <module name="profile-properties" />
+        <module name="resilience4j" />
+        <module name="resilience4j-spring-cloud" />
+        <module name="scdf-common" />
+        <module name="sms-service" />
+        <module name="spring-batch" />
+        <module name="spring-cloud-alibaba-dubbo-order" />
+        <module name="spring-cloud-alibaba-dubbo-user" />
+        <module name="spring-cloud-alibaba-nacos-configuration" />
+        <module name="spring-cloud-alibaba-nacos-consumer" />
+        <module name="spring-cloud-alibaba-nacos-consumer-openfeign" />
+        <module name="spring-cloud-alibaba-nacos-consumer-reactive" />
+        <module name="spring-cloud-alibaba-nacos-consumer-ribbon" />
+        <module name="spring-cloud-alibaba-nacos-consumer-sclb" />
+        <module name="spring-cloud-alibaba-nacos-provider" />
+        <module name="spring-cloud-alibaba-nacos-provider4-lb" />
+        <module name="spring-cloud-bus-node1" />
+        <module name="spring-cloud-bus-node2" />
+        <module name="spring-cloud-bus-node3" />
+        <module name="spring-cloud-config-client" />
+        <module name="spring-cloud-config-client-refresh" />
+        <module name="spring-cloud-config-client-service-registry" />
+        <module name="spring-cloud-config-server-file" />
+        <module name="spring-cloud-config-server-jdbc" />
+        <module name="spring-cloud-config-server-service-registry" />
+        <module name="spring-cloud-deployer-local" />
+        <module name="spring-cloud-eureka-nacos-consumer" />
+        <module name="spring-cloud-eureka-nacos-provider" />
+        <module name="spring-cloud-function" />
+        <module name="spring-cloud-function-aws" />
+        <module name="spring-cloud-function-gcp" />
+        <module name="spring-cloud-function-stream" />
+        <module name="spring-cloud-function-stream-multifuncs" />
+        <module name="spring-cloud-function-stream-withbindingannotation" />
+        <module name="spring-cloud-function-task" />
+        <module name="spring-cloud-function-web" />
+        <module name="spring-cloud-functional-application" />
+        <module name="spring-cloud-gateway" />
+        <module name="spring-cloud-gateway-serviceregistry" />
+        <module name="spring-cloud-nacos-consumer-ribbonenhance" />
+        <module name="spring-cloud-nacos-consumer-ribbonenhance-dynamicupdate" />
+        <module name="spring-cloud-nacos-gray-provider" />
+        <module name="spring-cloud-nacos-normal-provider" />
+        <module name="spring-cloud-netflix-eureka-consumer" />
+        <module name="spring-cloud-netflix-eureka-provider" />
+        <module name="spring-cloud-netflix-eureka-server" />
+        <module name="spring-cloud-stream" />
+        <module name="spring-cloud-stream-consumer-error" />
+        <module name="spring-cloud-stream-consumer-retry" />
+        <module name="spring-cloud-stream-custom-bindingtargetfactory" />
+        <module name="spring-cloud-stream-metrics" />
+        <module name="spring-cloud-stream-polling-consumer" />
+        <module name="spring-cloud-stream-producer-error" />
+        <module name="spring-cloud-stream-producer-partition" />
+        <module name="spring-cloud-task" />
+        <module name="spring-cloud-task-simple" />
+        <module name="spring-integration" />
+        <module name="spring-messaing" />
+        <module name="task-error" />
+        <module name="task01" />
+        <module name="task02" />
+        <module name="task03" />
+        <module name="task04" />
+        <module name="task05" />
+        <module name="task06" />
+        <module name="zuul-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="alibaba-sentinel" target="8" />
+      <module name="alibaba-sentinel-spring-cloud-gateway" target="8" />
+      <module name="alibaba-sentinel-zuul" target="8" />
+      <module name="bus-common" target="8" />
+      <module name="creditcard-fraud-detection-sink" target="8" />
+      <module name="creditcard-source" target="8" />
+      <module name="delivery-service" target="8" />
+      <module name="hello-skipper (1)" target="8" />
+      <module name="hello-skipper (2)" target="8" />
+      <module name="hello-skipper (3)" target="8" />
+      <module name="java-function" target="8" />
+      <module name="my-circuit-breaker" target="8" />
+      <module name="nacos-provider" target="1.7" />
+      <module name="netflix-hystrix" target="8" />
+      <module name="netflix-hystrix-dashboard" target="8" />
+      <module name="netflix-hystrix-spring-cloud-gateway" target="8" />
+      <module name="netflix-hystrix-zuul" target="8" />
+      <module name="order-service" target="8" />
+      <module name="profile-properties" target="8" />
+      <module name="resilience4j" target="8" />
+      <module name="resilience4j-spring-cloud" target="8" />
+      <module name="scdf-common" target="8" />
+      <module name="sms-service" target="8" />
+      <module name="spring-batch" target="8" />
+      <module name="spring-cloud-alibaba-dubbo-order" target="8" />
+      <module name="spring-cloud-alibaba-dubbo-user" target="1.7" />
+      <module name="spring-cloud-alibaba-nacos-configuration" target="1.7" />
+      <module name="spring-cloud-alibaba-nacos-consumer" target="8" />
+      <module name="spring-cloud-alibaba-nacos-consumer-openfeign" target="8" />
+      <module name="spring-cloud-alibaba-nacos-consumer-reactive" target="8" />
+      <module name="spring-cloud-alibaba-nacos-consumer-ribbon" target="8" />
+      <module name="spring-cloud-alibaba-nacos-consumer-sclb" target="8" />
+      <module name="spring-cloud-alibaba-nacos-provider" target="1.7" />
+      <module name="spring-cloud-alibaba-nacos-provider4-lb" target="1.7" />
+      <module name="spring-cloud-bus-node1" target="8" />
+      <module name="spring-cloud-bus-node2" target="8" />
+      <module name="spring-cloud-bus-node3" target="8" />
+      <module name="spring-cloud-config-client" target="8" />
+      <module name="spring-cloud-config-client-refresh" target="8" />
+      <module name="spring-cloud-config-client-service-registry" target="1.7" />
+      <module name="spring-cloud-config-server-file" target="1.7" />
+      <module name="spring-cloud-config-server-jdbc" target="1.7" />
+      <module name="spring-cloud-config-server-service-registry" target="1.7" />
+      <module name="spring-cloud-deployer-local" target="8" />
+      <module name="spring-cloud-eureka-nacos-consumer" target="8" />
+      <module name="spring-cloud-eureka-nacos-provider" target="1.7" />
+      <module name="spring-cloud-function" target="8" />
+      <module name="spring-cloud-function-aws" target="8" />
+      <module name="spring-cloud-function-gcp" target="8" />
+      <module name="spring-cloud-function-stream" target="8" />
+      <module name="spring-cloud-function-stream-multifuncs" target="8" />
+      <module name="spring-cloud-function-stream-withbindingannotation" target="8" />
+      <module name="spring-cloud-function-task" target="8" />
+      <module name="spring-cloud-function-web" target="8" />
+      <module name="spring-cloud-functional-application" target="8" />
+      <module name="spring-cloud-gateway" target="1.7" />
+      <module name="spring-cloud-gateway-serviceregistry" target="1.7" />
+      <module name="spring-cloud-nacos-consumer-ribbonenhance" target="8" />
+      <module name="spring-cloud-nacos-consumer-ribbonenhance-dynamicupdate" target="8" />
+      <module name="spring-cloud-nacos-gray-provider" target="1.7" />
+      <module name="spring-cloud-nacos-normal-provider" target="1.7" />
+      <module name="spring-cloud-netflix-eureka-consumer" target="8" />
+      <module name="spring-cloud-netflix-eureka-provider" target="1.7" />
+      <module name="spring-cloud-netflix-eureka-server" target="1.7" />
+      <module name="spring-cloud-stream" target="8" />
+      <module name="spring-cloud-stream-consumer-error" target="8" />
+      <module name="spring-cloud-stream-consumer-retry" target="8" />
+      <module name="spring-cloud-stream-custom-bindingtargetfactory" target="8" />
+      <module name="spring-cloud-stream-metrics" target="8" />
+      <module name="spring-cloud-stream-polling-consumer" target="8" />
+      <module name="spring-cloud-stream-producer-error" target="8" />
+      <module name="spring-cloud-stream-producer-partition" target="8" />
+      <module name="spring-cloud-task" target="8" />
+      <module name="spring-cloud-task-simple" target="8" />
+      <module name="spring-integration" target="8" />
+      <module name="spring-messaing" target="8" />
+      <module name="task-error" target="8" />
+      <module name="task01" target="8" />
+      <module name="task02" target="8" />
+      <module name="task03" target="8" />
+      <module name="task04" target="8" />
+      <module name="task05" target="8" />
+      <module name="task06" target="8" />
+      <module name="zuul-gateway" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: spring-cloud-gateway-proxy
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: http
+          uri: http://httpbin.org
+          predicates:
+          - Path=/httpbin/**
+          - Path=/httpbin/**,/httpok/**
+          filters:
+          - StripPrefix=1
+        - id: nacos
+          uri: lb://nacos-provider
+          predicates:
+          - Path=/nacos/**
+          filters:
+          - StripPrefix=1
+        - id: prefixpath
+          uri: http://httpbin.org
+          predicates:
+          - Path=/status/**
+          filters:
+          - PrefixPath=/status
+          - StripPrefix=1
+        - id: redirect
+          uri: http://httpbin.org
+          predicates:
+          - Path=/redirect/**
+          filters:
+          - RedirectTo=301,http://www.taobao.com
+          - StripPrefix=1
+        - id: rewritepath
+          uri: http://httpbin.org
+          predicates:
+          - Path=/rewritepath/**
+          filters:
+          - RewritePath=/foo/(?<segment>.*),/$\{segment}
+          - StripPrefix=1
+        - id: setpath
+          uri: http://httpbin.org
+          predicates:
+          - Path=/setpath/{code}
+          filters:
+          - SetPath=/status/{code}
+        - id: setrequestheader
+          uri: http://httpbin.org
+          predicates:
+          - Path=/setrequestheader/**
+          filters:
+          - SetRequestHeader=book, request deep in spring cloud
+          - StripPrefix=1
+        - id: setresponseheader
+          uri: http://httpbin.org
+          predicates:
+          - Path=/setresponseheader/status/{code}
+          filters:
+          - SetResponseHeader=book,hello-{code}
+          - StripPrefix=1
+        - id: forward
+          uri: forward://httpbin/status/200
+          predicates:
+          - Path=/forward/**
+
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

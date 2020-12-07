@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hystrix-spring-cloud-gateway
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

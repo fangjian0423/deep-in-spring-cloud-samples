@@ -1,0 +1,27 @@
+[
+  {
+    "name": "apple",
+    "count": 10,
+    "price": 2
+  },
+  {
+    "name": "banana",
+    "count": 20,
+    "price": 2.5
+  },
+  {
+    "name": "nintendo switch",
+    "count": 2,
+    "price": 2000
+  },
+  {
+    "name": "book: deep in spring cloud",
+    "count": 100,
+    "price": 45
+  },
+  {
+    "name": "iphone",
+    "count": 10,
+    "price": 5000
+  }
+]

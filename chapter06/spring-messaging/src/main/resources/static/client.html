@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Client</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+</head>
+<body>
+
+    <button onclick="subscribe()">Subscribe</button> <br/> <br/>
+    Jerry: <label id="jerry"></label> <br/>
+    Tom: <label id="tom"></label> <br/> <br/>
+    <button onclick="payload()">Payload</button> <br/> <br/>
+    <button onclick="destinationVariable()">DestinationVariable</button> <br/> <br/>
+    <button onclick="sendMsg('input1')">Send Message</button> <br/> <br/>
+    input1: <input type="input" id="input1"/>
+    input2: <input type="input" id="input2"/>
+    input3: <input type="input" id="input3"/>
+
+
+</body>
+
+<script type="text/javascript">
+    function connect() {
+        var socket = new SockJS('/start');
+        ws = Stomp.over(socket);
+
+        ws.connect({}, function(frame) {
+
+            ws.subscribe("/topic/tom", function(message) {
+                document.getElementById("tom").innerHTML = message.body;
+            });
+
+            ws.subscribe("/topic/jerry", function(message) {
+                document.getElementById("jerry").innerHTML = message.body;
+            });
+
+            ws.subscribe("/topic/messages1", function(message) {
+                document.getElementById("input1").value = message.body;
+                ws.send("/app/message", {}, JSON.stringify({'type': 'input2'}));
+            });
+
+            ws.subscribe("/topic/messages2", function(message) {
+                document.getElementById("input2").value = message.body;
+                ws.send("/app/message", {}, JSON.stringify({'type': 'input3'}));
+            });
+
+            ws.subscribe("/topic/messages3", function(message) {
+                document.getElementById("input3").value = message.body;
+                ws.send("/app/message", {}, JSON.stringify({'type': 'input4'}));
+            });
+
+            ws.subscribe("/topic/error", function(message) {
+                console.log("Error message: " + message.body);
+            });
+        }, function(error) {
+            console.log("STOMP error: " + error);
+        });
+    }
+
+    function sendMsg(input) {
+        ws.send("/app/message", {}, JSON.stringify({'type': input}));
+    }
+
+    function subscribe() {
+        ws.send("/app/subscribe", {}, JSON.stringify({}));
+    }
+
+    function payload() {
+        ws.send("/app/payload", {'content-type':'application/json'}, JSON.stringify({'id':1, "name": 'jim'}));
+    }
+
+    function destinationVariable() {
+        ws.send("/app/path/hi", {'DestinationVariableMethodArgumentResolver.templateVariables':
+                    {'var': "hi"}
+             },
+            JSON.stringify({'id':1, "name": 'jim'}));
+    }
+
+    connect();
+</script>
+
+</html>
