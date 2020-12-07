@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="spring-cloud-function-alibabacloud-fc:war">
-    <output-path>$PROJECT_DIR$/chapter10/spring-cloud-function-alibabacloud-fc/target</output-path>
-    <root id="archive" name="spring-cloud-function-alibabacloud-fc-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="spring-cloud-function-alibabacloud-fc:war exploded" />
-    </root>
-  </artifact>
-</component>
