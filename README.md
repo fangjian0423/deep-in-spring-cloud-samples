@@ -59,3 +59,6 @@
 - 流处理案例：Spring Cloud Stream 完成信用卡反欺诈系统
 - 批处理案例：Spring Cloud Task 完成统计GitHub仓库的各项指标数据
 - Spring Cloud Function & GCP Cloud Functions 体验 Serverless
+
+
+售卖地址: https://item.jd.com/13043028.html 。 感谢支持
