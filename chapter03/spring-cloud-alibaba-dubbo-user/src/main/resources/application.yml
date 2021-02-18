@@ -9,3 +9,7 @@ dubbo:
 
 server:
   port: 0
+
+logging:
+  level:
+    web: debug
