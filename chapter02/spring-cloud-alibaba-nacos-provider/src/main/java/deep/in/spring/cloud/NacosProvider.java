@@ -16,12 +16,7 @@
 
 package deep.in.spring.cloud;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
-import com.alibaba.fastjson.JSON;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -32,19 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NacosProvider {
 
     public static void main(String[] args) {
-        //SpringApplication.run(NacosProvider.class, args);
-        //JSON.p
-        List<String> a = new ArrayList<>();
-        String json = JSON.toJSONString(a);
-
-        List<String> str = JSON.parseArray(json, String.class);
-
-        System.out.println(str);
-
-        for(String s : str) {
-            System.out.println(s);
-        }
-
+        SpringApplication.run(NacosProvider.class, args);
     }
 
     @RestController
