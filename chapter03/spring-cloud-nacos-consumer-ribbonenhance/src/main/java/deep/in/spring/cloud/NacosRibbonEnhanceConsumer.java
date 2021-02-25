@@ -18,12 +18,12 @@ package deep.in.spring.cloud;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.netflix.loadbalancer.IRule;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
@@ -36,10 +36,19 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ *
+ * 单路由使用：
+ * <code>@RibbonClients(defaultConfiguration = {GrayRule.class})</code>
+ * <p>
+ * 多路由使用：
+ * <code>@RibbonClients(value = { @RibbonClient(name = "A", configuration = GrayRuleA.class), @RibbonClient(name = "B", configuration = GrayRuleB.class) })</code>
+ *
  * @author <a href="mailto:fangjian0423@gmail.com">Jim</a>
+ * @author <a href="mailto:xuxiaowei@xuxiaowei.com.cm">徐晓伟</a>
  */
 @SpringBootApplication
 @EnableFeignClients
+@RibbonClients(defaultConfiguration = {GrayRule.class})
 public class NacosRibbonEnhanceConsumer {
 
     public static void main(String[] args) {
@@ -57,11 +66,6 @@ public class NacosRibbonEnhanceConsumer {
     @Bean
     public GrayRequestInterceptor requestInterceptor() {
         return new GrayRequestInterceptor();
-    }
-
-    @Bean
-    public IRule myRule() {
-        return new GrayRule();
     }
 
     @RestController
