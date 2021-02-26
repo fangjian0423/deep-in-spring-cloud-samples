@@ -42,7 +42,7 @@ public class TrafficRule {
         return name;
     }
 
-    public void setRateLimiter Name(String name) {
+    public void setRateLimiterName(String name) {
         this.name = name;
     }
 
