@@ -16,13 +16,10 @@
 
 package deep.in.spring.cloud;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,9 +42,6 @@ public class NacosReactiveConsumer {
         @Autowired
         private ReactiveDiscoveryClient reactiveDiscoveryClient;
 
-        @Autowired
-        private DiscoveryClient discoveryClient;
-
         private String serviceName = "my-provider";
 
         @GetMapping("/services")
@@ -58,20 +52,18 @@ public class NacosReactiveConsumer {
         @GetMapping("/instances")
         public Flux<String> instance() {
             return reactiveDiscoveryClient.getInstances(serviceName).map(instance ->
-                "[ serviceId: " + instance.getServiceId() +
-                    ", host: " + instance.getHost() +
-                    ", port: " + instance.getPort() + " ]");
+                    "[ serviceId: " + instance.getServiceId() +
+                            ", host: " + instance.getHost() +
+                            ", port: " + instance.getPort() + " ]");
         }
 
         @GetMapping("/hello")
         public Mono<String> hello() {
-            List<ServiceInstance> serviceInstances = discoveryClient.getInstances(serviceName);
-            ServiceInstance serviceInstance = serviceInstances.stream()
-                .findAny().orElseThrow(() ->
-                    new IllegalStateException("no " + serviceName + " instance available"));
+            Flux<ServiceInstance> instances = reactiveDiscoveryClient.getInstances(serviceName);
+            ServiceInstance serviceInstance = instances.blockFirst();
             return WebClient.create("http://" +
-                serviceInstance.getHost() + ":" + serviceInstance.getPort())
-                .get().uri("/echo?name=nacos").retrieve().bodyToMono(String.class);
+                    serviceInstance.getHost() + ":" + serviceInstance.getPort())
+                    .get().uri("/echo?name=nacos").retrieve().bodyToMono(String.class);
         }
 
     }
